@@ -1,0 +1,152 @@
+/**index.wxss**/
+
+.hot {
+  height: 100rpx;
+  padding: 10rpx;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  margin-top: 70rpx;
+}
+
+.title {
+  height: 136px;
+  width: 313px;
+}
+
+.imagesize {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagesize image {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.hot_title {
+  color: white;
+  font-size: medium;
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+}
+
+.root {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.background-image {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.search_view {
+  padding: 10rpx;
+}
+
+.search_input {
+  background-color: #ffff;
+  border: 4rpx solid #f5f5f5;
+  box-shadow: 4rpx 4rpx 4rpx 4rpx #999;
+  -webkit-box-shadow: 4px 4px 6px 0px #999; /*for IOS*/
+  border-radius: 45rpx;
+  font-size: small;
+  font-family: sans-serif;
+  text-align: center;
+  height: 70rpx;
+  width: 250px;
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+}
+
+.onmyoji_item {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  margin-bottom: 5rpx;
+  margin-top: 5rpx;
+  background-color: #ffff;
+  padding: 10rpx;
+}
+
+.hover_onmyoji {
+  background-color: #999;
+}
+
+.item_image {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.item_info {
+  background-color: #fff;
+}
+
+.image_box {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.item_desc {
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  color: #999;
+  font-size: medium;
+}
+
+.footer {
+  font-size: 25rpx;
+  color: #999;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.hot_list {
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+}
+
+.hot_item {
+  display: inline-block;
+  color: #fff;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  background-color: #d53524;
+  border-radius: 15rpx;
+  margin-right: 10rpx;
+  margin-top: 10rpx;
+}

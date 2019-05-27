@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<import src="../template/template.wxml" />
+
+<view class="root">
+  <image class='background-image' src='/static/image/bg.jpg' mode="aspectFill"></image>
+  <view class="content">
+    <image class="logo" src="/static/image/logo.png"></image>
+    <image class="title" src="/static/image/title1.png"></image>
+    
+    <view class="hot">
+      <text class="hot_title">输出查询信息</text>
+      <view class="hot_list">
+        <navigator url="../onmyoji/onmyoji?id={{item.id}}" wx:for="{{ popularList }}" wx:key="name" class="hot_item">{{ item.name }}</navigator>
+      </view>
+    </view>
+
+    <view class="search_view">
+      <input placeholder="支付宝/QQ/微信/YY/游戏ID/贴吧ID" type="text" value="{{ searchText }}" class="search_input" bindinput="bindSearch" />
+    </view>
+
+    <view class="">
+      <block wx:for="{{ hellspawnList }}" wx:key="id">
+        <template is="onmyoji" data="{{ ...item }}" />
+      </block>
+    </view>
+  </view>
+</view>
