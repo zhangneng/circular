@@ -9,23 +9,23 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#e53927",
-    "navigationBarTitleText": "式神猎手",
+    "navigationBarTitleText": "江湖通缉令",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#b7b7b7",
-    "backgroundColor": "#fff",
+    "backgroundColor": "#000000",
     "selectedColor": "#e53927",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "寻",
+        "text": "数据查询",
         "iconPath": "static/image/search.png",
         "selectedIconPath": "static/image/searchs.png"
       },
       {
         "pagePath": "pages/my/my",
-        "text": "我",
+        "text": "数据提交",
         "iconPath": "static/image/my.png",
         "selectedIconPath": "static/image/mys.png"
       }
