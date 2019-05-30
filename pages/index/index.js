@@ -38,6 +38,7 @@ Page({
     this.setData({
       searchText: e.detail.value
     })
+
     if (this.data.searchText) {
       var url = http.generateUrl('api/v1/search/' + this.data.searchText);
       wx.request({
@@ -64,16 +65,22 @@ Page({
 
   wantedSearch: function(e) {
     // _loading = true;
-    var context = this;
+    // var context = this;
+    var that = this; 
     this.setData({
       searchText: e.detail.value
     })
 
     wx.request({
-      url:'http://106.14.208.22:80/tjl/search',
-      //url: 'tjl/search',
+      url:'https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3',
+      // https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3
+      // url: 'tjl/search',
       method: 'POST',
-      data: this.data.searchText,
+      // data: this.data.searchText,
+      data:{},
+      header: {
+        "Content-Type": "applciation/json" //默认值
+      },
       success: function(res) {
         console.log(res);
         // _loading = false;
