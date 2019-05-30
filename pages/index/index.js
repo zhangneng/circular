@@ -66,18 +66,18 @@ Page({
   wantedSearch: function(e) {
     // _loading = true;
     // var context = this;
-    var that = this; 
+    var that = this;
     this.setData({
       searchText: e.detail.value
     })
 
     wx.request({
-      url:'https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3',
+      url: 'https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3',
       // https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3
       // url: 'tjl/search',
       method: 'POST',
       // data: this.data.searchText,
-      data:{},
+      data: {},
       header: {
         "Content-Type": "applciation/json" //默认值
       },
@@ -183,6 +183,60 @@ Page({
         $('.J_wantedList').append(_listHtml);
       }
     }
+  },
+
+  numberToChinese: function(num) {
+    var unitPos = 0;
+    var chnNumChar = ["零", "壹", "貳", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+    var chnUnitSection = ["", "萬", "億", "萬億", "億億"];
+    var chnUnitChar = ["", "拾", "佰", "仟"];
+    var strIns = '',
+      chnStr = '';
+    var needZero = false;
+    if (num === 0) {
+      return chnNumChar[0];
+    }
+    while (num > 0) {
+      var section = num % 10000;
+      if (needZero) {
+        chnStr = chnNumChar[0] + chnStr;
+      }
+      strIns = sectionToChinese(section);
+      strIns += (section !== 0) ? chnUnitSection[unitPos] : chnUnitSection[0];
+      chnStr = strIns + chnStr;
+      needZero = (section < 1000) && (section > 0);
+      num = Math.floor(num / 10000);
+      unitPos++;
+    }
+
+    return chnStr;
+  },
+
+  sectionToChinese: function(section) {
+    var strIns = '',
+      chnStr = '';
+    var unitPos = 0;
+    var chnNumChar = ["零", "壹", "貳", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+    var chnUnitSection = ["", "萬", "億", "萬億", "億億"];
+    var chnUnitChar = ["", "拾", "佰", "仟"];
+    var zero = true;
+    while (section > 0) {
+      var v = section % 10;
+      if (v === 0) {
+        if (!zero) {
+          zero = true;
+          chnStr = chnNumChar[v] + chnStr;
+        }
+      } else {
+        zero = false;
+        strIns = chnNumChar[v];
+        strIns += chnUnitChar[unitPos];
+        chnStr = strIns + chnStr;
+      }
+      unitPos++;
+      section = Math.floor(section / 10);
+    }
+    return chnStr;
   },
 
   onShareAppMessage: function() {
