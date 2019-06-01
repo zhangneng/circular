@@ -33,6 +33,13 @@ Page({
     })
   },
 
+  inputSearch: function (e) {
+    var context = this;
+    this.setData({
+      searchText: e.detail.value
+    })
+  },
+
   bindSearch: function(e) {
     var context = this;
     this.setData({
@@ -65,16 +72,17 @@ Page({
 
   wantedSearch: function(e) {
     // _loading = true;
-    // var context = this;
-    var that = this;
+    var context = this;
     this.setData({
       searchText: e.detail.value
     })
-
+    // var url = http.generateUrl('https://106.14.208.22/tjl/search?param=' + this.data.searchText + '&page=1&size=3');
+    var url = 'https://106.14.208.22/tjl/search?param=' + this.data.searchText + '&page=1&size=3';
     wx.request({
-      url: 'https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3',
+      // url: 'https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3', url
       // https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3
       // url: 'tjl/search',
+      url: url,
       method: 'POST',
       // data: this.data.searchText,
       data: {},

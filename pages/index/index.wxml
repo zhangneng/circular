@@ -15,7 +15,7 @@
     </view>
 
     <view class="search_view">
-      <input placeholder="支付宝/QQ/微信/YY/游戏ID/贴吧ID" type="text" value="{{ searchText }}" class="search_input" bindinput="wantedSearch" />
+      <input placeholder="支付宝/QQ/微信/YY/游戏ID/贴吧ID" type="text" value="{{ searchText }}" class="search_input" bindconfirm = "wantedSearch" bindinput="inputSearch" />
     </view>
 
     <view class="">
