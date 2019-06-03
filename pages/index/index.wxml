@@ -1,5 +1,6 @@
 <!--index.wxml-->
-<import src="../template/template.wxml" />
+<import src="../template/template.wxml"/>
+<import src="../wxParse/wxParse.wxml"/> 
 
 <view class="root">
   <image class='background-image' src='/static/image/bg.jpg' mode="aspectFill"></image>
@@ -10,7 +11,7 @@
     <view class="hot">
       <text class="hot_title">输出查询信息</text>
       <view class="hot_list">
-        <navigator url="../onmyoji/onmyoji?id={{item.id}}" wx:for="{{ popularList }}" wx:key="name" class="hot_item">{{ item.name }}</navigator>
+        <navigator wx:for="{{ popularList }}" wx:key="name" class="hot_item">{{ item.name }}</navigator>
       </view>
     </view>
 

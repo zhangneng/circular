@@ -1,4 +1,5 @@
 <!--pages/statement/statement.wxml-->
+<import src="../wxParse/wxParse.wxml"/> 
 <view class="statement">
     <text>
         本程序 (式神猎手) 所提供的信息，只供参考之用。

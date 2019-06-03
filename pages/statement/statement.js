@@ -1,7 +1,10 @@
 // pages/statement/statement.js
+var WxParse = require('../wxParse/wxParse.js');
+
 Page({
   data:{},
   onLoad:function(options){
+    var that = this;
     // 页面初始化 options为页面跳转所带来的参数
   },
   onReady:function(){
