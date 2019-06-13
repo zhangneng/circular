@@ -1,7 +1,6 @@
+@import "../wxParse/wxParse.wxss";
 .statement {
     padding: 10rpx;
     margin-left: 10rpx;
     font-size: medium;
 }
-
-@import "../wxParse/wxParse.wxss";

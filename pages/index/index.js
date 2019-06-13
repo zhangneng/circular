@@ -3,6 +3,7 @@
 var WxParse = require('../wxParse/wxParse.js');
 var http = require("../../utils/http.js");
 var app = getApp();
+var _listHtml = '';
 
 Page({
   data: {
@@ -78,15 +79,10 @@ Page({
     this.setData({
       searchText: e.detail.value
     })
-    // var url = http.generateUrl('https://106.14.208.22/tjl/search?param=' + this.data.searchText + '&page=1&size=3');
     var url = 'https://106.14.208.22/tjl/search?param=' + this.data.searchText + '&page=1&size=3';
     wx.request({
-      // url: 'https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3', url
-      // https://106.14.208.22/tjl/search?param=黑暗&page=1&size=3
-      // url: 'tjl/search',
       url: url,
       method: 'POST',
-      // data: this.data.searchText,
       data: {},
       header: {
         "Content-Type": "applciation/json" //默认值
@@ -152,7 +148,6 @@ Page({
     let _dataContent = data.data.content;
     //if ($.type(_dataContent) == 'array') 
     //{
-    var _listHtml = '';
     data.data.content.forEach(function(i, e) {
       // var _orderNumber = _page * 5 + i + 1;
       var _orderNumber = i + 1;
@@ -213,6 +208,9 @@ Page({
         '</div>' +
         '</li>';
       _listHtml += _itemHtml;
+      WxParse.wxParse('article', 'html', _listHtml, context, 5);
+      var app = getApp();
+      app.globalData.userInfo = _listHtml;
     });
     if (type == 1) {
       _searchSuccess = true;
@@ -221,8 +219,8 @@ Page({
       $('.J_wantedList').attr('data-page', _page + 1);
       $('.J_wantedList').html(_listHtml);
     } else if (type == 2) {
-      $('.J_wantedList').attr('data-page', _page + 1);
-      $('.J_wantedList').append(_listHtml);
+      // $('.J_wantedList').attr('data-page', _page + 1);
+      // $('.J_wantedList').append(_listHtml);
     }
 
   },
@@ -260,6 +258,13 @@ Page({
       title: title,
       path: 'pages/index/index'
     }
+  },
+
+  go: function () {
+    wx.navigateTo({
+      url: '../statement/statement?_listHtml=1',
+    })
+    // this.getPopular();
   },
 
   onShow: function() {

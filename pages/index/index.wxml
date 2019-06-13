@@ -8,7 +8,7 @@
     <image class="logo" src="/static/image/logo.png"></image>
     <image class="title" src="/static/image/title1.png"></image>
     
-    <view class="hot">
+    <view class="hot" bindtap='go'>
       <text class="hot_title">输出查询信息</text>
       <view class="hot_list">
         <navigator wx:for="{{ popularList }}" wx:key="name" class="hot_item">{{ item.name }}</navigator>
