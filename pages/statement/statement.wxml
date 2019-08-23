@@ -3,7 +3,7 @@
 <view class="statement">
   <image class='background-image' src='/static/image/bg.jpg' mode="aspectFill"></image>
   <view class="content">
-      <image class="logo" src="/static/image/logo.png"></image>
+    <image class="logo" src="/static/image/logo.png"></image>
     <view class="content1">
       <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>

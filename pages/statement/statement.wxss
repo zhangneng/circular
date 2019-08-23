@@ -43,5 +43,7 @@
 
 .content1 {
   position: absolute;
+  left: 5px;
+  top: 5px;
   color: #fff;
 }

@@ -96,3 +96,11 @@
   text-align: center;
   margin-top: 30rpx;
 }
+
+.hot_title {
+  color: red;
+  font-size: medium;
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+}
