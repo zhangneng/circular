@@ -21,6 +21,11 @@
   justify-content: center;
 }
 
+.title {
+  height: 136px;
+  width: 331px;
+}
+
 .background-image {
   position: absolute;
   height: 100%;
@@ -45,5 +50,6 @@
   position: absolute;
   left: 5px;
   top: 5px;
+  margin-top: 150px;
   color: #fff;
 }

@@ -162,11 +162,11 @@ Page({
       var _lierWeixin = i.lierWeixin || '';
       var _lierDiscribe = i.lierDiscribe || '';
       var _highlightDisplay = i.highlightDisplay || '';
-      var _itemHtml = '<li class="warning-item ' + _highlightDisplay + '">' +
+      var _itemHtml = '<li class="warning-item ' + 'line-height:25px' + _highlightDisplay + '">' +
         '<div class="wanted-man-info cf">' +
         '<div class="wanted-man-face">' +
         '<div class="wanted-man-face-pic">' +
-        '<img src="/images/logo.png"/>' +
+        '<img src="/static/image/image.png"/>' +
         '</div>' +
         '</div>' +
         '<div class="wanted-man-info-content">' +
@@ -206,12 +206,12 @@ Page({
         '<p>' + _lierDiscribe + '</p>' +
         '</div>' +
         '</div>' +
-        '</li>';
+        '</li>' + '<div>' + '</div>';
       _listHtml += _itemHtml;
-      WxParse.wxParse('article', 'html', _listHtml, context, 5);
-      var app = getApp();
-      app.globalData.userInfo = _listHtml;
     });
+    WxParse.wxParse('article', 'html', _listHtml, context, 5);
+    var app = getApp();
+    app.globalData.userInfo = _listHtml;
     if (type == 1) {
       _searchSuccess = true;
       $('.J_search').removeClass('current');
@@ -260,7 +260,7 @@ Page({
     }
   },
 
-  go: function () {
+  go: function() {
     wx.navigateTo({
       url: '../statement/statement?_listHtml=1',
     })
