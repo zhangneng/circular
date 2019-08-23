@@ -1,6 +1,47 @@
 @import "../wxParse/wxParse.wxss";
+
 .statement {
-    padding: 10rpx;
-    margin-left: 10rpx;
-    font-size: medium;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  font-size: medium;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+  margin-top: 70rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  color: #999;
+}
+
+.content1 {
+  position: absolute;
+  color: #fff;
 }

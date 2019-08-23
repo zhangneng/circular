@@ -1,13 +1,13 @@
 <!--index.wxml-->
-<import src="../template/template.wxml"/>
-<import src="../wxParse/wxParse.wxml"/> 
+<import src="../template/template.wxml" />
+<import src="../wxParse/wxParse.wxml" />
 
 <view class="root">
   <image class='background-image' src='/static/image/bg.jpg' mode="aspectFill"></image>
   <view class="content">
     <image class="logo" src="/static/image/logo.png"></image>
     <image class="title" src="/static/image/title1.png"></image>
-    
+
     <view class="hot" bindtap='go'>
       <text class="hot_title">输出查询信息</text>
       <view class="hot_list">
@@ -16,7 +16,7 @@
     </view>
 
     <view class="search_view">
-      <input placeholder="支付宝/QQ/微信/YY/游戏ID/贴吧ID" type="text" value="{{ searchText }}" class="search_input" bindconfirm = "wantedSearch" bindinput="inputSearch" />
+      <input placeholder="支付宝/QQ/微信/YY/游戏ID/贴吧ID" type="text" value="{{ searchText }}" class="search_input" bindconfirm="wantedSearch" bindinput="inputSearch" />
     </view>
 
     <view class="">

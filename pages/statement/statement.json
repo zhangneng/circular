@@ -1,3 +1,5 @@
 {
-    "navigationBarTitleText": "免责声明"
+  "navigationBarTitleText": "查询结果",
+  "navigationBarBackgroundColor": "#000000",
+  "backgroundTextStyle": "dark"
 }
